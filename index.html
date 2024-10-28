@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Barangay Concepcion</title>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav__bar" id="navBar">
+      <div class="logo nav__logo">
+        <a href="#"><img src="C:/Users/Kirstie/OneDrive/Desktop/barangay/1.png" alt="logo" /></a>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-3-line"></i>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#events">EVENTS</a></li>
+        <li><a href="#updates">NEWS & UPDATES</a></li>
+        <li><a href="#contactus">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section__container" id="home" style="background-image: url('C:/Users/Kirstie/OneDrive/Desktop/barangay/2.jpg'); background-size: cover; background-position: center; height: 400px; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="header__content">
+      <h1>Welcome to Barangay Concepcion</h1>
+      <p>"Empowering our community with unity, service, and progress."</p>
+    </div>
+  </section>
+
+  <section class="section__container" id="about">
+    <h2>About Us</h2>
+    <p>Barangay Concepcion is a vibrant community located in San Pablo City, Laguna. With a mission to foster unity, promote well-being, and ensure public safety, we are committed to delivering essential services to every citizen.</p>
+  </section>
+
+  <section class="section__container" id="events">
+    <h2>Upcoming Events</h2>
+    <div class="events__list">
+      <div class="event__item" onclick="openModal('event1')">
+        <strong>Community Cleanup Drive:</strong> October 28, 2024<br>
+        <strong>Time:</strong> 8:00 AM
+      </div>
+      <div class="event__item" onclick="openModal('event2')">
+        <strong>Medical Mission:</strong> November 12, 2024<br>
+        <strong>Time:</strong> 9:00 AM
+      </div>
+      <div class="event__item" onclick="openModal('event3')">
+        <strong>Barangay Fiesta:</strong> December 8-10, 2024<br>
+        <strong>Time:</strong> 10:00 AM
+      </div>
+    </div>
+  </section>
+
+  <div id="event1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('event1')">&times;</span>
+      <h3>Community Cleanup Drive</h3>
+      <p>Join us in keeping our barangay clean! All volunteers are welcome. Meet at the barangay hall at 8 AM.</p>
+    </div>
+  </div>
+
+  <div id="event2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('event2')">&times;</span>
+      <h3>Medical Mission</h3>
+      <p>Free medical services will be provided by volunteer doctors and nurses. Location: Barangay Hall.</p>
+    </div>
+  </div>
+
+  <div id="event3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('event3')">&times;</span>
+      <h3>Barangay Fiesta</h3>
+      <p>Celebrate with us from December 8 to 10 with parades, games, and food fairs at Barangay Plaza.</p>
+    </div>
+  </div>
+
+  <section class="section__container" id="updates">
+    <h2>News & Updates</h2>
+    <p>Stay updated with the latest announcements, projects, and developments in our barangay. Check back regularly for more updates.</p>
+  </section>
+
+  <section class="section__container contact" id="contactus">
+    <h2>Contact Us</h2>
+    <p>If you have any inquiries or need assistance, feel free to reach out to us:</p>
+    <ul class="contact-list">
+        <li><strong>Office Address:</strong> Barangay Hall, Concepcion, San Pablo City</li>
+        <li><strong>Phone:</strong> (049) 123-4567</li>
+        <li><strong>Email:</strong> info@barangayconcepcion.ph</li>
+    </ul>
+</section>
+
+
+  <footer class="footer" id="footer">
+    <div class="footer__container">
+      <div class="footer__col">
+        <h4>About Barangay Concepcion</h4>
+        <p>Barangay Concepcion has been serving the community with dedication, focusing on safety, health, and progress for all residents.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#updates">News & Updates</a></li>
+          <li><a href="#contactus">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div id="popup-form" class="modal" style="display: none; align-items: center; justify-content: center;">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Subscribe to Our Newsletter</h3>
+      <form>
+        <label for="popup-name">Name:</label>
+        <input type="text" id="popup-name" name="popup-name" required>
+        <label for="popup-email">Email:</label>
+        <input type="email" id="popup-email" name="popup-email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Show the pop-up after 10 seconds (10000 milliseconds)
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById("popup-form").style.display = "flex";
+      }, 10000);
+    };
+
+    // Popup close button logic
+    document.querySelector(".close-btn").addEventListener("click", function() {
+      document.getElementById("popup-form").style.display = "none";
+    });
+
+    // Close the popup when clicking outside the form
+    window.onclick = function(event) {
+      const popup = document.getElementById("popup-form");
+      if (event.target === popup) {
+        popup.style.display = "none";
+      }
+    };
+    function removeActiveClasses() {
+        const links = document.querySelectorAll('.nav__links a');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+    }
+
+    // Function to add 'active' class to the current link
+    // Function to remove 'active' class from all links
+    function removeActiveClasses() {
+        const links = document.querySelectorAll('.nav__links a');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+    }
+
+    // Function to add 'active' class to the current link
+    function setActiveLink() {
+        const sections = document.querySelectorAll('.section__container');
+        const scrollPos = window.scrollY + 50; // Adjust offset if needed
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            // Check if the section is in view
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                const currentId = section.getAttribute('id');
+                removeActiveClasses();
+                document.querySelector(`.nav__links a[href="#${currentId}"]`).classList.add('active');
+            }
+        });
+    }
+
+    // Add event listener for scrolling
+    window.addEventListener('scroll', setActiveLink);
+  </script>
+
+</body>
+</html>

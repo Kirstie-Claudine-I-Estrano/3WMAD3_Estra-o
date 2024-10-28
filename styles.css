@@ -1,0 +1,401 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav__logo img {
+  width: 50px;
+  margin-right: auto; /* Aligns logo to the left */
+}
+
+/* Navigation Links */
+/* Navigation Links */
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: auto; /* Pushes the nav links to the right */
+}
+
+.nav__links a {
+  text-decoration: none; /* Default state without underline */
+  color: white; /* Default link color */
+  font-weight: bold;
+  transition: color 0.3s; /* Smooth transition for hover color */
+}
+
+.nav__links a:hover {
+  color: #ffcc00; /* Hover color for nav links */
+}
+
+.nav__links a.active {
+  text-decoration: underline; /* Underline for active link */
+  color: #ffcc00; /* Active link color */
+}
+
+.nav__menu__btn {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile Responsive Menu */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    background-color: #1e3c72;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav__links.active {
+    display: flex;
+  }
+
+  .nav__menu__btn {
+    display: block;
+  }
+}
+
+/* Section Styles */
+.section__container {
+  padding: 50px;
+  text-align: center;
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section__container h1,
+h2 {
+  margin-bottom: 20px;
+  color: #2a5298;
+}
+
+.section__container p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Welcome Section Specific Styles */
+#home h1 {
+  font-weight: bold; /* Bold font */
+  color: white; /* Keep text color white */
+  font-size: 3rem; /* Make the font size larger */
+}
+
+#home p {
+  font-weight: bold; /* Bold font */
+  font-size: 1.5rem; /* Make the font size larger */
+  color: white; /* Keep text color white */
+}
+
+/* Map Section */
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  margin-top: 20px;
+}
+
+/* Footer Styles */
+.footer {
+  background: #2a5298;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.footer__container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer__col h4 {
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__links li {
+  margin-bottom: 8px;
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footer__links a:hover {
+  color: #ffcc00;
+}
+
+.footer__bar {
+  text-align: center;
+  padding: 10px;
+  background-color: #1e3c72;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Button Styles */
+.btn--responsive {
+  display: inline-block;
+  background-color: #1e3c72;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn--responsive:hover {
+  background-color: #ffcc00;
+  color: black;
+}
+
+/* Event items */
+.events__list {
+  display: flex; /* Horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  gap: 1rem; /* Space between items */
+  justify-content: center; /* Center align items */
+}
+
+.event__item {
+  border: 2px solid #3498db;
+  padding: 15px; /* Increased padding */
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: calc(30% - 1rem); /* Set width for each item */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+.event__item:hover {
+  background-color: #f0f8ff;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+.contact-list {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+/* Newsletter Modal Styles */
+#newsletter-modal .modal-content {
+  border-radius: 8px;
+}
+
+#newsletter-modal h3 {
+  margin-bottom: 20px; /* Spacing below the heading */
+}
+
+#newsletter-modal label {
+  display: block; /* Each label on a new line */
+  margin-bottom: 5px; /* Spacing between label and input */
+}
+
+#newsletter-modal input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for better user experience */
+  margin-bottom: 10px; /* Space between inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 5px; /* Rounded corners */
+}
+
+#newsletter-modal button {
+  background-color: #1e3c72; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px; /* Padding for button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+#newsletter-modal button:hover {
+  background-color: #ffcc00; /* Change color on hover */
+}
+
+/* Subscribe Button Styles */
+#subscribe-btn {
+  background-color: rgb(172, 31, 31); /* Red background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+#subscribe-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  cursor: pointer; /* Ensure pointer cursor when hovering over the modal content */
+}
+
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer; /* Ensure pointer cursor */
+  user-select: none; /* Prevents text selection */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer; /* Ensures pointer cursor on hover */
+}
+
+
+
+/* Newsletter Modal Styles */
+#popup-form .modal-content {
+  border-radius: 8px; /* Rounded corners for the newsletter modal */
+}
+
+#popup-form h3 {
+  margin-bottom: 20px; /* Spacing below the heading */
+}
+
+#popup-form label {
+  display: block; /* Each label on a new line */
+  margin-bottom: 5px; /* Spacing between label and input */
+}
+
+#popup-form input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding for better user experience */
+  margin-bottom: 10px; /* Space between inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 5px; /* Rounded corners */
+}
+
+#popup-form button {
+  background-color: #1e3c72; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px; /* Padding for button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+#popup-form button:hover {
+  background-color: #ffcc00; /* Change color on hover */
+}
+
+/* Subscribe Button Styles */
+#subscribe-btn {
+  background-color: rgb(172, 31, 31); /* Red background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+#subscribe-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+}
